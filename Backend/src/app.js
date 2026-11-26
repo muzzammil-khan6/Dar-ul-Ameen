@@ -1,6 +1,6 @@
 const express = require("express");
-const cors = require("cors");
 const path = require("path");
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const app = express();
@@ -13,8 +13,8 @@ app.use(
 );
 
 app.use(express.json({ limit: "50mb" }));
-const dirname = path.dirname(__filename);
-const publicDir = path.join(dirname, "public");
+const publicDir = path.join(__dirname, "..", "public");
+
 app.use(express.static(publicDir));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 app.use(cookieParser());

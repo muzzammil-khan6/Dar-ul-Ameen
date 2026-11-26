@@ -1,5 +1,5 @@
 // Job: Flexible two-column layout template for dashboards and complex profile views
-import React from "react";
+
 
 export default function TwoColumnLayout({
   left,

@@ -27,7 +27,7 @@ export default function BookingListLayout({
 
       
       {/* Filter Chips */}
-      {/* {filters && <div className="flex items-center gap-2 overflow-x-auto pb-1">{filters}</div>} */}
+      {filters && <div className="flex items-center gap-2 overflow-x-auto pb-1">{filters}</div>}
 
       {/* Content List */}
       <div className="space-y-4">{children}</div>

@@ -6,8 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: "0.0.0.0",
-    port: 5173,
-    // allowedHosts: ["reclusive-good-unfixable.ngrok-free.dev"],
+    port: 3000,
   },
   build: {
     target: "esnext",
