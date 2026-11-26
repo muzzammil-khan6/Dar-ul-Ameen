@@ -18,7 +18,6 @@ import {
   Menu,
   MessageSquare,
   Wallet,
-  RefreshCw,
   Check,
 } from "lucide-react";
 import NotificationBell from "../common/NotificationBell";
