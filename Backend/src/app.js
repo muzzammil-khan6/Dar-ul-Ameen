@@ -7,7 +7,9 @@ const app = express();
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL || "http://localhost:5173"],
+    origin: [
+      process.env.FRONTEND_URL || "https://s45mkq2p-3000.inc1.devtunnels.ms",
+    ],
     credentials: true,
   }),
 );

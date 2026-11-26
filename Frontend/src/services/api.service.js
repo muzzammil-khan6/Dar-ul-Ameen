@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+  import.meta.env.VITE_API_URL ||
+  "https://s45mkq2p-3000.inc1.devtunnels.ms/api";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -17,9 +18,7 @@ export const regenerateAccessToken = async () => {
   if (refreshPromise) return refreshPromise;
 
   const refreshToken =
-    typeof window !== "undefined"
-      ? localStorage.getItem("refreshToken")
-      : null;
+    typeof window !== "undefined" ? localStorage.getItem("refreshToken") : null;
 
   if (!refreshToken) {
     throw new Error("No refresh token available");

@@ -3,7 +3,7 @@ import LoadingState from "../../components/common/LoadingState";
 
 export default function Google() {
   useEffect(() => {
-    const backendUrl = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+    const backendUrl = import.meta.env.VITE_API_URL || "https://s45mkq2p-3000.inc1.devtunnels.ms/api";
     window.location.href = `${backendUrl}/auth/google`;
   }, []);
 

@@ -114,13 +114,13 @@ export default function Register() {
 
   const handleGoogleLogin = () => {
     const backendUrl =
-      import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+      import.meta.env.VITE_API_URL || "https://s45mkq2p-3000.inc1.devtunnels.ms/api";
     window.location.href = `${backendUrl}/auth/google`;
   };
 
   const handleMockGoogleLogin = () => {
     const backendUrl =
-      import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+      import.meta.env.VITE_API_URL || "https://s45mkq2p-3000.inc1.devtunnels.ms/api";
     window.location.href = `${backendUrl}/auth/google/mock`;
   };
 
