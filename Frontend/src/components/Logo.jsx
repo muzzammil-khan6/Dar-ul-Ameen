@@ -26,7 +26,7 @@ function Logo({
       src={src}
       alt={alt}
       draggable={false}
-      className={`object-contain select-none ${className}`}
+      className={`object-cover object-center select-none ${className}`}
       {...props}
     />
   );

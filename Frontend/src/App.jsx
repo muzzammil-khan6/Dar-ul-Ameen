@@ -356,8 +356,8 @@ export default function App() {
               </Routes>
             </Suspense>
           </div>
-        <Footer />
-      </div>
+          <Footer />
+        </div>
       </Router>
     </ToastProvider>
   );

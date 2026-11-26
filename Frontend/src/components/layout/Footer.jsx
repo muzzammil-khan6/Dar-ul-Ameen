@@ -5,6 +5,13 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import Logo from "../Logo";
 
+const languages = [
+  { code: "en", label: "English" },
+  { code: "ar", label: "العربية" },
+  { code: "ur", label: "اردو" },
+  { code: "hi", label: "हिन्दी" },
+];
+
 function Footer() {
   const location = useLocation();
   const { i18n } = useTranslation();
@@ -27,36 +34,44 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-white select-none pt-16 pb-8 sm:pt-16 sm:pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main 4-column Footer Grid matching Reference */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6">
+    <footer className="bg-primary text-white select-none pt-4 pb-8">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Main 5-column Footer Grid matching Reference */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:py-8 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Column 1: Brand (456fr equivalent) */}
-          <div className="sm:col-span-2 lg:col-span-5 flex flex-col gap-6">
-            <Link to="/" className="flex items-center gap-3 w-fit">
-              <Logo variant="icon" className="h-10 w-10 text-white" />
-              <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                darulameen
-              </span>
-            </Link>
-
+          <div className="sm:col-span-2 flex flex-row justify-start items-center gap-12 lg:gap-0 h-16">
+              <Link to="/" className="flex items-center shrink-0">
+                <div className="overflow-hidden items-center mb-3">
+                  <Logo variant="horizontal" className="h-20 mt-2 w-48" />
+              </div>             
+              </Link>
             <p className="text-base text-white/70 leading-relaxed max-w-sm">
               Thoughtful learning for children.
               <br />
               Reassuring support for families.
-            </p>
-
-            <button
-              type="button"
-              onClick={toggleLanguage}
-              className="text-base text-white/70 hover:text-amber hover:underline hover:decoration-amber underline-offset-4 transition-colors text-left cursor-pointer w-fit"
-            >
-              English / <span lang="ur">اردو</span>
-            </button>
+            </p> 
           </div>
-
-          {/* Column 2: Explore (224fr equivalent) */}
-          <div className="flex flex-col gap-4 lg:col-span-2">
+          {/* Column 2: Languages (224fr equivalent) */}
+            <div className="px-8 flex flex-col items-start justify-around">
+              <p className="text-base font-semibold text-white">
+              Languages
+              </p> 
+              {languages.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => handleLanguageChange(l.code)}
+                  className={`text-base hover:text-amber hover:underline hover:decoration-amber underline-offset-4 transition-colors text-left ${
+                    i18n.language === l.code
+                      ? "bg-primary text-white"
+                      : "text-muted hover:text-charcoal"
+                  }`}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+          {/* Column 3: Explore (224fr equivalent) */}
+          <div className="px-8 flex flex-col gap-4">
             <h4 className="text-base font-semibold text-white">
               Explore
             </h4>
@@ -88,8 +103,8 @@ function Footer() {
             </div>
           </div>
 
-          {/* Column 3: Learning (224fr equivalent) */}
-          <div className="flex flex-col gap-4 lg:col-span-3">
+          {/* Column 4: Learning (224fr equivalent) */}
+          <div className="px-8 flex flex-col gap-4">
             <h4 className="text-base font-semibold text-white">
               Learning
             </h4>
@@ -115,8 +130,8 @@ function Footer() {
             </div>
           </div>
 
-          {/* Column 4: Help (224fr equivalent) */}
-          <div className="flex flex-col gap-4 lg:col-span-2">
+          {/* Column 5: Help (224fr equivalent) */}
+          <div className="px-8 flex flex-col gap-4">
             <h4 className="text-base font-semibold text-white">
               Help
             </h4>
@@ -144,7 +159,7 @@ function Footer() {
         </div>
 
         {/* Bottom Legal Bar matching Reference */}
-        <div className="mt-10 pt-10 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 text-sm text-white/70">
+        <div className="mt-10 px-8 pt-10 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 text-sm text-white/70">
           <p className="flex-1">
             © 2026 Darulameen. All rights reserved.
           </p>

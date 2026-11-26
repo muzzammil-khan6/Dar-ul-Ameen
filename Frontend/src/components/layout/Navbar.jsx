@@ -123,26 +123,30 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-ivory border-b border-border shadow-xs">
       <div className="max-w-7xl  px-4 sm:px-6">
+        {/* TOP AREA */}
         <div className="flex items-center justify-between h-16">
-          {/* Brand Logo - directs to home */}
-          <div className="flex items-center gap-6 lg:gap-8">
+          {/* LEFT AREA: Dropdown Button + Logo  */}
+          <div className="flex items-center gap-4 lg:gap-6">
+            {/* Mobile menu toggle */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg text-charcoal hover:bg-sage/50"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
+            </button>
+            {/* Brand Logo - directs to home */}
             <Link to="/" className="flex items-center shrink-0">
-              <div className="hidden sm:block">
-                <Logo variant="full" className="h-20 w-full" />
-              </div>
-              <div className="block sm:hidden bg-primary rounded-lg p-1">
-                <Logo variant="icon" className="h-8 w-8" />
+              <div className="overflow-hiddenitems-center mb-3">
+                <Logo variant="full" className="h-16 mt-4 w-28" />
               </div>
             </Link>
 
-            {/* Desktop Navigation Links */}
-            {isHomePage && (
-              <Link to="/teachers">
-                <Button variant="cta" size="sm">
-                  Book an Introductory Class
-                </Button>
-              </Link>
-            )}
+
             <nav className="hidden md:flex items-center gap-6">
               {isHomePage ? (
                 nav.map(([label, id]) => (
@@ -165,10 +169,18 @@ export default function Navbar() {
             </nav>
           </div>
 
-          {/* Right Area: Language Switcher + User Area */}
+          {/* RIGHT AREA: Language Switcher + User Area */}
           <div className="flex items-center gap-3">
+                        {/* Desktop Navigation Links */}
+            {isHomePage && (
+              <Link to="/teachers">
+                <Button variant="cta" size="sm">
+                  Book an Introductory Class
+                </Button>
+              </Link>
+            )}
             {/* Language Switcher: English | العربية | اردو | हिन्दी */}
-            <div className="hidden sm:flex items-center text-xs font-medium border border-border rounded-lg p-1 bg-sage/40">
+            <div className="hidden lg:flex items-center text-xs font-medium border border-border rounded-lg p-1 bg-sage/40">
               {languages.map((l, idx) => (
                 <React.Fragment key={l.code}>
                   <button
@@ -191,7 +203,7 @@ export default function Navbar() {
 
             {/* Auth Buttons or User Menu */}
             {!isAuthenticated ? (
-              <div className="hidden sm:flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <Link to="/login">
                   <Button variant="secondary" size="sm">
                     {t("nav.login") || "Log In"}
@@ -348,25 +360,12 @@ export default function Navbar() {
               </div>
             </div>
           )}
-
-            {/* Mobile menu toggle */}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-charcoal hover:bg-sage/50"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </button>
           </div>
         </div>
-
+        {/* BOTTOM AREA: Dropdown */}
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border py-3 space-y-2 bg-ivory">
+          <div className="lg:hidden border-t border-border py-3 space-y-2 bg-ivory">
             {/* Language Switcher in Mobile */}
             <div className="flex items-center justify-around py-2 border-b border-border/50">
               {languages.map((l) => (
@@ -390,7 +389,7 @@ export default function Navbar() {
                   key={id}
                   href={"#" + id}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 rounded-lg text-sm font-medium text-charcoal hover:bg-sage/40 hover:text-primary transition-colors"
+                  className="md:hidden block px-3 py-2 rounded-lg text-sm font-medium text-charcoal hover:bg-sage/40 hover:text-primary transition-colors"
                 >
                   {label}
                 </a>
@@ -399,13 +398,13 @@ export default function Navbar() {
               <Link
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2 rounded-lg text-sm font-medium text-charcoal hover:bg-sage/40 hover:text-primary transition-colors"
+                className="md:hidden block px-3 py-2 rounded-lg text-sm font-medium text-charcoal hover:bg-sage/40 hover:text-primary transition-colors"
               >
                 Home
               </Link>
             )}
 
-            {!isAuthenticated && (
+            {/* {!isAuthenticated && (
               <div className="flex flex-col gap-2 pt-2 border-t border-border/50">
                 <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="secondary" className="w-full">
@@ -418,7 +417,7 @@ export default function Navbar() {
                   </Button>
                 </Link>
               </div>
-            )}
+            )} */}
           </div>
         )}
       </div>
