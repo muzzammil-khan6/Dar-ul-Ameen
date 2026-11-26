@@ -48,11 +48,16 @@ export default function AdminWithdraws() {
   };
 
   return (
-    <AdminLayout
-      title={t("admin.withdrawsManagement")}
-      subtitle="Review and process tutor bank transfer and wallet cashout requests"
-    >
+    <AdminLayout>
       <div className="space-y-6">
+              <div>
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("admin.withdrawsManagement")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Review and process tutor bank transfer and wallet cashout requests"}
+                </p>
+              </div> 
         {isLoading && withdraws.length === 0 ? (
           <LoadingState message="Loading withdrawal requests..." />
         ) : isError ? (

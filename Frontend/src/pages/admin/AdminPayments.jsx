@@ -25,11 +25,16 @@ export default function AdminPayments() {
   const totalTeacherShare = payments.reduce((acc, p) => acc + (p.teacherShare || 0), 0);
 
   return (
-    <AdminLayout
-      title={t("admin.paymentsManagement")}
-      subtitle="Detailed ledger of platform transactions with commission breakdowns and teacher payouts"
-    >
+    <AdminLayout>
       <div className="space-y-6">
+              <div>
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("admin.paymentsManagement")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Detailed ledger of platform transactions with commission breakdowns and teacher payouts"}
+                </p>
+              </div>
         {/* Summary Metric Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <Card className="p-5">

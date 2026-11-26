@@ -165,6 +165,14 @@ export default function AdminSubjects() {
       subtitle="Define platform academic subjects, supported grade levels, and their benchmark rates (7 Days / 1 Hour Class)."
     >
       <div className="space-y-6">
+              <div>
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("admin.subjectsManagement")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Define platform academic subjects, supported grade levels, and their benchmark rates (7 Days / 1 Hour Class)."}
+                </p>
+              </div>
         {/* Notice Banner */}
         <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200 flex items-start gap-3">
           <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />

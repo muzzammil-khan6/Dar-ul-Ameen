@@ -54,10 +54,7 @@ export default function AdminDashboard() {
   );
 
   return (
-    <AdminLayout
-      title={t("admin.dashboardTitle")}
-      subtitle="Overview of platform users, teachers, bookings, and financial performance"
-    >
+    <AdminLayout>
       {isLoading && !dashboard ? (
         <LoadingState message="Loading platform overview..." />
       ) : isError ? (
@@ -65,8 +62,17 @@ export default function AdminDashboard() {
           message={message}
           onRetry={() => dispatch(fetchAdminDashboard())}
         />
-      ) : (
-        <div className="space-y-8">
+        ) : (            
+            <div className="space-y-8">
+                           <div>
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("admin.dashboardTitle")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Overview of platform users, teachers, bookings, and financial performance"}
+                </p>
+              </div>
+
           {/* Key Metrics Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <Card className="p-5 flex items-center gap-4">

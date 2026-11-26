@@ -57,10 +57,7 @@ export default function AdminTeachers() {
   };
 
   return (
-    <AdminLayout
-      title={t("admin.teachersManagement")}
-      subtitle="Approve or reject applicant requests, block or unblock accounts, and view teacher schedules"
-    >
+    <AdminLayout>
       {isLoading && teachers.length === 0 ? (
         <LoadingState message="Loading teachers..." />
       ) : isError ? (
@@ -69,7 +66,15 @@ export default function AdminTeachers() {
           onRetry={() => dispatch(fetchAdminTeachers())}
         />
       ) : (
-        <Card className="p-6">
+            <Card className="p-6">
+              <div>
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("admin.teachersManagement")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Approve or reject applicant requests, block or unblock accounts, and view teacher schedules"}
+                </p>
+              </div> 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>

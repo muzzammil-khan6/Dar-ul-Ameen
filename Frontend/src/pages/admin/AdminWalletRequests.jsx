@@ -89,11 +89,16 @@ export default function AdminWalletRequests() {
   });
 
   return (
-    <AdminLayout
-      title="Student Wallet Top-up Requests"
-      subtitle="Review proof screenshots, verify JazzCash / Easypaisa transaction IDs, and credit student balances"
-    >
+    <AdminLayout>
       <div className="space-y-6">
+              <div>
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("Student Wallet Top-up Requests")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Review proof screenshots, verify JazzCash / Easypaisa transaction IDs, and credit student balances"}
+                </p>
+        </div>
         {/* Status Filters */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1">
           {STATUSES.map((st) => (

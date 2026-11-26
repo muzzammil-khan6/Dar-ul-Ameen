@@ -107,11 +107,16 @@ export default function AdminBookings() {
   );
 
   return (
-    <AdminLayout
-      title="Booking & Payment Approvals"
-      subtitle="Review student payments, verify bank screenshots, and activate monthly tuition schedules"
-    >
+    <AdminLayout>
       <div className="space-y-6">
+              <div>
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("Booking & Payment Approvals")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Review student payments, verify bank screenshots, and activate monthly tuition schedules"}
+                </p>
+              </div>
         {/* Status Filter Chips */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1">
           {FILTER_STATUSES.map((st) => (

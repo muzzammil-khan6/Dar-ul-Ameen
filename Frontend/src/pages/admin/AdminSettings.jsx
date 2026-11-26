@@ -83,10 +83,7 @@ export default function AdminSettings() {
   };
 
   return (
-    <AdminLayout
-      title={t("admin.settingsTitle")}
-      subtitle="Manage global platform commission fees, payment accounts for wallet top-ups, and payout thresholds"
-    >
+    <AdminLayout>
       <div className="max-w-3xl space-y-6">
         {isLoading && !settings ? (
           <LoadingState message="Loading platform settings..." />
@@ -97,7 +94,14 @@ export default function AdminSettings() {
           />
         ) : (
           <Card className="p-8">
-            {savedSuccess && (
+              <div className="mb-8">
+                <h1 className="block text-base font-bold text-charcoal leading-tight">
+                  {t("admin.settingsTitle")}
+                </h1>
+                <p className="text-[11px] text-muted block">
+                  {"Manage global platform commission fees, payment accounts for wallet top-ups, and payout thresholds"}
+                </p>
+              </div>            {savedSuccess && (
               <div className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-xs font-semibold text-green-800 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-600" />
                 Settings updated successfully! Changes apply immediately.
