@@ -36,7 +36,7 @@ export default function HeroSection({ onOpenIntroModal }) {
 
           <div className="pt-2 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
             
-            <Link to="/teachers">
+            <Link to="/teachers" className="w-full sm:w-auto">
             <Button
               variant="cta"
               size="lg"
@@ -44,7 +44,7 @@ export default function HeroSection({ onOpenIntroModal }) {
             >
               Book an Introductory Class
             </Button>
-          </Link> 
+            </Link>  
            
 
             <a href="#programs" className="w-full sm:w-auto">
