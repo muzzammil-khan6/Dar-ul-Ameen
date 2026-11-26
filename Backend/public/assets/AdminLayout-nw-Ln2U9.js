@@ -1,0 +1,1 @@
+import"./rolldown-runtime-XKyaHtl9.js";import{p as e}from"./vendor-Br1Ig3FW.js";import{t}from"./DashboardLayout-CKHMImJ0.js";import{t as n}from"./vendor-react-DWHbDxQW.js";e();var r=n();function i({children:e,title:n,subtitle:i}){return(0,r.jsx)(t,{role:`admin`,title:n,subtitle:i,children:e})}export{i as t};

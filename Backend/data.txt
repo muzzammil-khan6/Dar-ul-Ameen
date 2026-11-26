@@ -1,0 +1,8 @@
+
+### Demo Accounts for Testing
+| Role | Email | Password |
+|---|---|---|
+| **Admin** | `admin@darulameen.com` | `AdminPassword123` |
+| **Approved Teacher** | `teacher@darulameen.com` | `TeacherPassword123` |
+| **Pending Teacher** | `pendingteacher@darulameen.com` | `TeacherPassword123` |
+| **Student** | `student@darulameen.com` | `StudentPassword123` |

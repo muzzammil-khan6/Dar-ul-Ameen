@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html[lang="en"] {
+  font-family: 'Inter', sans-serif;
+  direction: ltr;
+}
+
+html[lang="ar"] {
+  font-family: 'Noto Naskh Arabic', 'Inter', sans-serif;
+  direction: rtl;
+}
+
+html[lang="ur"] {
+  font-family: 'Noto Nastaliq Urdu', 'Inter', sans-serif;
+  direction: rtl;
+}
+
+html[lang="hi"] {
+  font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  direction: ltr;
+}
+
+body {
+  margin: 0;
+  background-color: #FAF8F2;
+  color: #202E35;
+}
+
+::selection {
+  background-color: #E5AD46;
+  color: #202E35;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #202E35;
+}
